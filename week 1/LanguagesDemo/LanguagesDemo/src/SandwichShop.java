@@ -4,12 +4,19 @@ public class SandwichShop {
     public static void main(String[] args) {
         Scanner userInput = new Scanner(System.in);
 
+        String checkLoaded;
+
         int size, age;
         double baseCost, finalCost;
         System.out.println("What size sandwich would you like?");
         System.out.println("- 1. Regular: base price $5.45");
         System.out.println("- 2. Large: base price $8.95");
         size = Integer.parseInt(userInput.nextLine());
+
+        System.out.println("Would you like the sandwich loaded? (Y/N)");
+        System.out.println("Regular: $1.00");
+        System.out.println("Large: $1.75");
+        checkLoaded = userInput.nextLine();
 
         System.out.println("What age are you? The following ages get discounts: ");
         System.out.println("- Student (17 years old or younger) : 10% Discount");
@@ -21,6 +28,15 @@ public class SandwichShop {
         }
         else{
             baseCost = 8.95;
+        }
+
+        if(checkLoaded.equalsIgnoreCase("y")){
+            if(size == 1){
+                baseCost += 1.00;
+            }
+            else{
+                baseCost += 1.75;
+            }
         }
 
         if(age <= 17){
