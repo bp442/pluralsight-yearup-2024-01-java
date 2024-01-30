@@ -6,7 +6,7 @@ public class PayrollCalculator {
         Scanner userInput = new Scanner(System.in);
 
         String userName;
-        float hoursWorked, payRate, grossPay;
+        float hoursWorked, payRate, grossPay, overtimeHours;
 
         System.out.println("Enter the employee's name: ");
         userName = userInput.nextLine();
@@ -17,8 +17,15 @@ public class PayrollCalculator {
         System.out.println("Enter their pay rate: ");
         payRate = Float.parseFloat(userInput.nextLine());
 
-        grossPay = hoursWorked * payRate;
+        if(hoursWorked > 40){
+            overtimeHours = hoursWorked - 40;
+            hoursWorked -= overtimeHours;
 
+            grossPay = (hoursWorked * payRate) + (overtimeHours * (payRate * 1.5f));
+        }
+        else {
+            grossPay = hoursWorked * payRate;
+        }
         System.out.println("Employee: " + userName);
         System.out.println("Gross Pay: $" + grossPay);
     }
