@@ -38,7 +38,7 @@ public class CardGame
                 if(currentValue == 21 && currentWinningValue == 21){
                     winners.add(players.get(i).getPlayerName());
                 }
-                else if(currentValue == 21 && currentWinningValue != 21){
+                else if(currentValue == 21){
                     winners.clear();
                     winners.add(players.get(i).getPlayerName());
                     currentWinningValue = 21;
@@ -65,10 +65,10 @@ public class CardGame
 
             for(int i = 0; i < winners.size(); i++){
                 if(i == winners.size()-1){
-                    System.out.print(" " + winners.get(i));
+                    System.out.print(winners.get(i));
                 }
                 else{
-                    System.out.print(" " + winners.get(i) + " |");
+                    System.out.print(winners.get(i) + " | ");
                 }
             }
         }
