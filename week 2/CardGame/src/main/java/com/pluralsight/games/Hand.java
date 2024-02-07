@@ -6,10 +6,11 @@ public class Hand
 {
     private ArrayList<Card> cards = new ArrayList<>();
     private String playerName;
-
+    private boolean busted;
     public Hand(String playerName)
     {
         this.playerName = playerName;
+        this.busted = false;
     }
 
     public String getPlayerName()
@@ -46,6 +47,13 @@ public class Hand
             card.flip();
             System.out.println(card + " ");
             card.flip();
+        }
+    }
+
+    public void hit(Card card){
+        this.deal(card);
+        if(this.getValue() > 21) {
+            this.busted = true;
         }
     }
 }
