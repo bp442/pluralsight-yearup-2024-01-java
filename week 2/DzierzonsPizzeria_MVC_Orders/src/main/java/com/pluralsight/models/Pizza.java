@@ -64,20 +64,15 @@ public class Pizza
         return toppings;
     }
 
-    public void addTopping(String topping)
-    {
-        toppings.add(topping);
-    }
-
     public double getBasePrice()
     {
         double basePrice = 5.99;
 
-        if(size.equalsIgnoreCase("medium"))
+        if(size.equalsIgnoreCase("Medium"))
         {
             basePrice = 8.99;
         }
-        else if(size.equalsIgnoreCase("large"))
+        else if(size.equalsIgnoreCase("Large"))
         {
             basePrice = 11.99;
         }
@@ -89,6 +84,9 @@ public class Pizza
     {
         return getBasePrice() + (toppings.size() * 1.5);
     }
+
+    public void addTopping(String topping)
+    {
+        toppings.add(topping);
+    }
 }
-
-
