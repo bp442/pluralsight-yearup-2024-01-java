@@ -72,7 +72,14 @@ public class UserInput
         return cheese;
     }
 
-    public ArrayList<String> getToppings()
+    public boolean askToAddTopping(){
+        System.out.println("Do you want to add a topping (y/n)?");
+        String answer = scanner.nextLine();
+
+        return answer.equalsIgnoreCase("y");
+    }
+
+    public ArrayList<String> getTopping()
     {
         ArrayList<String> toppings = new ArrayList<>();
 
