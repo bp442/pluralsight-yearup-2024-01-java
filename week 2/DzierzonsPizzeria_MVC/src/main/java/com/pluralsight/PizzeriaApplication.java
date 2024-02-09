@@ -28,12 +28,7 @@ public class PizzeriaApplication
         pizza.setSize(ui.getPizzaSize());
         pizza.setSauce(ui.getSauce());
         pizza.setCheese(ui.getCheese());
-
-        while(ui.askToAddTopping()){
-            String topping = ui.getTopping();
-            pizza.addTopping(ui.getToppings());
-        }
-
+        pizza.setToppings(ui.getToppings());
 
         // display order
         ui.displayOrder(name, pizza);
